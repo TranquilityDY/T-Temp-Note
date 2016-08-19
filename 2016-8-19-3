@@ -1,0 +1,14 @@
+http://stackoverflow.com/questions/10005939/how-to-consume-json-post-data-in-an-express-application
+
+
+var express = require('express')
+  , app = express.createServer();
+
+app.use(express.bodyParser());
+
+app.post('/', function(request, response){
+  console.log(request.body);      // your JSON
+  response.send(request.body);    // echo the result back
+});
+
+app.listen(3000);
