@@ -1,0 +1,30 @@
+var parameter1 = {
+	text: '    	A-Si TFT-LCD gate (I) The improvement in the stress effect driving circuit    	  A-Si LCD gate driver (I) The improvement of the integrated circuit device performance    	  A-Si LCD gate (I) The integrated circuit is the key to performance improvement drive    	  Electronic Engineering Educational Practice Improvement Program: Sub-program three: research module-oriented implementation of the analog signal processing    	  Microprocessor application structure The micro-processor-based system application.    	  DSP applications DSP application    	  ARM architecture ARM-based system architecture    	  Microprocessor Applications    	  Micro-processing applications (8051/8052 Fundamentals and Applications) 	'
+
+};
+
+var parameter2 = {
+	text: 'He was from the fog to Douliu door: Douliu Writing fruit feast Taiwan Classical Poems: Classical Poems Taiwan Fruit writing "in Qiu research: a study of intertextuality" of Taiwan Lin Xiaomei three grass in classical Chinese poetry Cho writing research Qiu Feng Xi nose offshore hillside home, Huifei season net mullet - the dog of ancient and modern style endemic Poems Poems three Haidong Xu Wei on the expressive art of calligraphy (college students summer) late Ming calligraphy style expressionist law book this and radio management with, in your love arm can Enkū - First Shaoji calligraphy style discuss research Shaoji calligraphy art (college students summer special study) Taiwanese Literature Taiwanese literature history of chinese calligraphy the history of chinese callgraphy during the Japanese occupation of Taiwan poet mind map multiple horizons diet and abundant Lin Jingren set during the Japanese occupation of Taiwan adherents Poems: classical Poems Taiwan Note 5: age and Taiwan endemic classical poems Note 4: classical Poems of war and Catastrophist Taiwan Note: the ocean and the mountains of Taiwan classical aNTHOLOGY'
+    };
+
+
+var parameters = [parameter1,parameter2];
+
+lupus(0, 2, function(n) {
+
+		alchemy_language.entities(parameters[n], function (err, response) {
+			if (err)
+				console.log('error:', err);
+			else
+				console.log(JSON.stringify(response, null, 2));
+					fs.writeFile('D:/TempData/'+n+'.json',JSON.stringify(response, null, 2),  function(err) {
+					if (err) {
+					   return console.error(err);
+					}
+					console.log("寫資料中...\n");
+					});
+
+		});
+	}, function() {
+  console.log('All done!');
+});
